@@ -55,7 +55,7 @@ namespace BH.Adapter.CSProject
 
             AnalyzerManagerOptions opt = new AnalyzerManagerOptions() { LoggerFactory = factory, LogWriter = log };
             AnalyzerManager analyzerManager = new AnalyzerManager(opt);
-            ProjectAnalyzer projectAnalyzer = analyzerManager.GetProject(_fileSettings.GetFullFileName()) as ProjectAnalyzer;
+            ProjectAnalyzer projectAnalyzer = analyzerManager.GetProject(m_fileSettings.GetFullFileName()) as ProjectAnalyzer;
             projectAnalyzer.Logger = null;
 
             ProjectFile projectFile = new ProjectFile();
@@ -86,14 +86,15 @@ namespace BH.Adapter.CSProject
 
         private List<string> ExtractOutputPaths()
         {
-            StreamReader sr = new StreamReader(_fileSettings.GetFullFileName());
-
             List<string> lines = new List<string>();
-            string line = "";
-            while ((line = sr.ReadLine()) != null)
-                lines.Add(line);
+            using (StreamReader sr = new StreamReader(m_fileSettings.GetFullFileName()))
+            {
+                string line = "";
+                while ((line = sr.ReadLine()) != null)
+                    lines.Add(line);
 
-            sr.Close();
+                sr.Close();
+            }
 
             List<string> outputPaths = new List<string>();
             string outputPathStart = "<OutputPath>";

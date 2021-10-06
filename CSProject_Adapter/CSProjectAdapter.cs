@@ -45,9 +45,9 @@ namespace BH.Adapter.CSProject
                 return;
             }
 
-            _fileSettings = fileSettings;
+            m_fileSettings = fileSettings;
         }
 
-        private BH.oM.Adapter.FileSettings _fileSettings { get; set; } = null;
+        private BH.oM.Adapter.FileSettings m_fileSettings { get; set; } = null;
     }
 }
