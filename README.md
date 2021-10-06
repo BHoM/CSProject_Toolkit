@@ -1,12 +1,6 @@
-# template-repository
-This repository can be used to create brand new BHoM Toolkits :rocket:
+# CSProject_Toolkit
+This toolkit allows for pulling CSProject data into BHoM via an adapter. This toolkit utilises [Buildalyzer](https://github.com/daveaglick/Buildalyzer) to query data from a CSProject file and create BHoM object representations of that data.
 
-## Getting started and templates
-Learn how to [rapidly set up your development environment for BHoM here](https://github.com/BHoM/documentation/wiki/Getting-started-for-developers). 
+This toolkit is primarily for DevOps operations within BHoM, aiding of BHoMBot querying CSProject data in a format BHoMBot can easily work with, but is provided here as a toolkit for the open source community to utilise and collaborate on to further BHoM's ability to query CSProject data.
 
-Also, **Visual Studio templates**! :rocket:
-
-- [**Toolkit template**](https://github.com/BHoM/documentation/raw/master/templates/Toolkit%20template/SoftwareName_Toolkit.zip)
-- [Engine methods templates](https://github.com/BHoM/documentation/tree/master/templates/Engine%20method%20templates) (have a look at these later)
-
-For instructions on how to use the templates, [see the wiki page on the BHoM_Toolkit](https://github.com/BHoM/documentation/wiki/The-BHoM-Toolkit).
+Currently this works with the new CSProject format (used with .Net Standard 2.0 and .Net 5). Contributions for supporting other CSProject versions are welcome! :rocket:
