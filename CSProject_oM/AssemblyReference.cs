@@ -34,7 +34,7 @@ namespace BH.oM.Adapters.CSProject
         public virtual string Culture { get; set; } = null;
         public virtual string ProcessorArchitecture { get; set; } = null;
         public virtual string HintPath { get; set; } = "";
-        public virtual bool CopyLocal { get; set; } = false;
-        public virtual bool SpecificVersion { get; set; } = false;
+        public virtual bool CopyLocal { get; set; } = true;
+        public virtual bool SpecificVersion { get; set; } = true;
     }
 }
