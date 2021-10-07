@@ -66,13 +66,15 @@ namespace BH.Adapter.CSProject
             {
                 EnvironmentOptions options = new EnvironmentOptions();
                 options.DesignTime = true;
-                options.Preference = EnvironmentPreference.Core;
+                /*options.Preference = EnvironmentPreference.Core;
                 if (!projectFile.TargetNETVersions.Contains("netstandard2.0"))
-                    options.Preference = EnvironmentPreference.Framework;
+                    options.Preference = EnvironmentPreference.Framework;*/
                     
                 AnalyzerResult result = (projectAnalyzer.Build(options) as AnalyzerResults).First() as AnalyzerResult;
 
-                projectFile.References = Convert.ToAssemblyReference(result.Items.Where(x => x.Key == "Reference").First().Value.ToList());
+                var refs = result.Items.Where(x => x.Key == "Reference").FirstOrDefault();
+                if(refs.Value != null) //If the refs.value is null then it means there was no references in the csproject file
+                    projectFile.References = Convert.ToAssemblyReference(refs.Value.ToList());
 
                 projectFile.TargetNETVersions = projectAnalyzer.ProjectFile.TargetFrameworks.ToList();
             }
