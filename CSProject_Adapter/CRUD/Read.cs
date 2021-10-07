@@ -56,7 +56,6 @@ namespace BH.Adapter.CSProject
             AnalyzerManagerOptions opt = new AnalyzerManagerOptions() { LoggerFactory = factory, LogWriter = log };
             AnalyzerManager analyzerManager = new AnalyzerManager(opt);
             ProjectAnalyzer projectAnalyzer = analyzerManager.GetProject(m_fileSettings.GetFullFileName()) as ProjectAnalyzer;
-            projectAnalyzer.Logger = null;
 
             ProjectFile projectFile = new ProjectFile();
             projectFile.TargetNETVersions = projectAnalyzer.ProjectFile.TargetFrameworks.ToList();
