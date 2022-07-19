@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <FileVersion>5.3.0.0</FileVersion>
+    <AssemblyVersion>5.0.0.0</AssemblyVersion>
     <Description>https://github.com/BHoM/CSProject_Toolkit</Description>
     <RootNamespace>BH.Adapter.CSProject</RootNamespace>
     <Version>5.0.0</Version>
